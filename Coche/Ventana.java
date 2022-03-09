@@ -1,13 +1,13 @@
 class Ventana{
-private boolean abierta;
+private boolean estado;
 
 
 public Ventana(){
-	this.abierta = false;
+	this.estado = false;
 }
 
 public boolean getEstado(){
-	return this.abierta;
+	return this.estado;
 }
 	
 private void setEstado(boolean estado){
@@ -25,7 +25,7 @@ public void cerrar(){
 
 public String toString (){
 	String resultado = "Ventana : Cerrada";
-	if (this.abierta == true){
+	if (this.estado == true){
 		resultado = "Ventana: Abierta";
 
 
