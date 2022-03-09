@@ -9,13 +9,17 @@ public Motor(){
 public boolean getEncendido(){
 	return this.encendido;
 }
+	
+public void setEncendido(boolean encendido){
+	this.encendido = encendido;	
+}
 
 public void encender(){
-	 this.encendido = true;
+	 this.setEncendido(true);
 }
 
 public void apagar(){
-	this.encendido = false;
+	this.setEncendido(false);
 }
 
 public String toString(){
