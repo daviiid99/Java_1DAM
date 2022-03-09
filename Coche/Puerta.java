@@ -11,17 +11,21 @@ public Puerta(){
 public boolean getEstado(){
 	return this.estado;
 }
+	
+public void setEstado(boolean estado){
+	this.estado = estado;
+}
 
 public Ventana getVentana(){
 	return this.ventanaPuerta;
 }
 
 public void abrir(){
-	 this.estado = true;
+	 this.setEstado(true);
 }
 
 public void cerrar(){
-	this.estado = false;
+	this.setEstado(false);
 }
 
 public String toString (){
