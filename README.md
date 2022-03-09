@@ -1,4 +1,5 @@
-# This repo contains java projects
-<img src="https://plumbr.io/app/uploads/2019/06/java.png">
+# Class Coche
+Crea una clase Coche con un Motor y dos Puertas (Con ventana)
+Solo necesitas implementar los getter y el method toString
 
-Powered by Atom
+Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta} 
