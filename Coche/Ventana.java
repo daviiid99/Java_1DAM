@@ -9,13 +9,18 @@ public Ventana(){
 public boolean getEstado(){
 	return this.abierta;
 }
+	
+private void setEstado(boolean estado){
+	 this.estado = estado;	
+}
 
 public void abrir(){
-	 this.abierta = true;
+	this.setEstado(true);
+	//this.abierta = true;
 }
 
 public void cerrar(){
-	this.abierta = false;
+	this.setEstado(false);
 }
 
 public String toString (){
