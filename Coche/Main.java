@@ -1,7 +1,6 @@
 class Main {
  public static void main (String[] args){
  	Motor miMotor = new Motor();
- 	Ventana miVentana = new Ventana();
  	Puerta miPuertaVentana = new Puerta();
  	Coche miCoche = new Coche();
 
@@ -35,8 +34,8 @@ class Main {
  }
 }
 
-// Crea una clase Coche con un Motor y dos Puertas 
+// Crea una clase Coche con un Motor y dos Puertas
 // (Con ventana)
 
 // Solo necesitas implementar los getter y el method toString
-// Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta} 
+// Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta}
