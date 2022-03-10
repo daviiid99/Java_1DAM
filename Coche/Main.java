@@ -36,7 +36,6 @@ class Main {
 	System.out.println(miCoche);
 
   // Devolvemos todo a default
-  miCoche.getMotor().encender();
   miCoche.getMotor().apagar();
   miCoche.getPuertaI().cerrar();
 	miCoche.getPuertaD().cerrar();
