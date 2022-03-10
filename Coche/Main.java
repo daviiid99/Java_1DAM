@@ -17,6 +17,10 @@ class Main {
 	*/
 
 
+// Crea una clase Coche con un Motor y dos Puertas
+// (Con ventana)
+// Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta}
+
 	// Primero, encendemos el motor
 	miCoche.getMotor().encender();
 
@@ -31,11 +35,31 @@ class Main {
 
 	System.out.println(miCoche);
 
+  // Devolvemos todomiCoche.getMotor().encender();
+  miCoche.getMotor().apagar();
+  miCoche.getPuertaI().cerrar();
+	miCoche.getPuertaD().cerrar();
+  miCoche.getPuertaI().getVentana().cerrar();
+  miCoche.getPuertaD().getVentana().cerrar();
+
+  // Crea una clase Coche con un Motor y dos Puertas
+  // (Con ventana)
+  // Motor: encendido | PuertaI:{ Puerta: cerrada | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: cerrada}
+
+  // Comprobamos el estado del motor
+  System.out.println(miMotor);
+
+  // Encendemos el motor
+  miCoche.getMotor().encender();
+
+  // Segundo, abrimmos una de las puertas, la otra se quedará cerrada
+  miCoche.getPuertaD().abrir();
+
+  // Tercero, abrimos una ventana, la otra se quedará cerrada
+  miCoche.getPuertaI().getVentana().abrir();
+
+  // Imprimimos el toString con el resumen de todo los estados del coche
+  System.out.println(miCoche);
+
  }
 }
-
-// Crea una clase Coche con un Motor y dos Puertas
-// (Con ventana)
-
-// Solo necesitas implementar los getter y el method toString
-// Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta}
