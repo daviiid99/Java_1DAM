@@ -9,9 +9,9 @@ public Ventana(){
 public boolean getEstado(){
 	return this.estado;
 }
-	
+
 private void setEstado(boolean estado){
-	 this.estado = estado;	
+	 this.estado = estado;
 }
 
 public void abrir(){
@@ -25,7 +25,7 @@ public void cerrar(){
 
 public String toString (){
 	String resultado = "Ventana : Cerrada";
-	if (this.estado == true){
+	if (this.estado){
 		resultado = "Ventana: Abierta";
 
 
@@ -33,5 +33,5 @@ public String toString (){
 	return resultado;
 
 }
- 
+
  }
