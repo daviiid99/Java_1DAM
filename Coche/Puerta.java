@@ -11,7 +11,7 @@ public Puerta(){
 public boolean getEstado(){
 	return this.estado;
 }
-	
+
 public void setEstado(boolean estado){
 	this.estado = estado;
 }
@@ -30,7 +30,7 @@ public void cerrar(){
 
 public String toString (){
 	String resultado = "Puerta : Cerrada";
-	if (this.estado == true){
+	if (this.estado){
 		resultado = "Puerta: Abierta";
 
 
