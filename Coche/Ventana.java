@@ -26,7 +26,7 @@ public void cerrar(){
 public String toString (){
 	String resultado = "Ventana : Cerrada";
 	if (this.estado){
-		resultado = "Ventana: Abierta";
+		resultado = "Ventana : Abierta";
 
 
 	}

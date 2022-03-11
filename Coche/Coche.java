@@ -22,9 +22,13 @@ public Motor getMotor(){
 	return this.motorCoche;
 }
 
+public void abrirVentanaDerecha(){
+	this.puerta_derecha.getVentana().abrir();
+
+}
+
 public String toString(){
 	return motorCoche + "|" + "PuertaI:{ " + puerta_izquierda + "}" + "|" + "PuertaD:{ " + puerta_derecha + "}";
 }
-
 
 }

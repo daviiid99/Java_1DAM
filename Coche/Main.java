@@ -3,6 +3,7 @@ class Main {
  	Motor miMotor = new Motor();
  	Puerta miPuertaVentana = new Puerta();
  	Coche miCoche = new Coche();
+  Ventana Ventana_Derecha_Coche = new Ventana();
 
  	/** miPuertaVentana.abrir();
 
@@ -60,6 +61,44 @@ class Main {
 
   // Imprimimos el toString con el resumen de todo los estados del coche
   System.out.println(miCoche);
+
+    // Devolvemos todo a default
+    miCoche.getMotor().apagar();
+    miCoche.getPuertaI().cerrar();
+  	miCoche.getPuertaD().cerrar();
+    miCoche.getPuertaI().getVentana().cerrar();
+    miCoche.getPuertaD().getVentana().cerrar();
+
+    System.out.println(miCoche);
+
+    // Ver como esta el motor
+    // Ver como esta la ventana de la puerta derecha
+    System.out.println(miCoche.getMotor());
+    // Ver como esta la puerta derecha
+    System.out.println(miCoche.getPuertaD());
+    // Abrir la puerta puerta_derecha
+	   miCoche.getPuertaD().abrir();
+     System.out.println(miCoche);
+     System.out.println(miCoche.getPuertaD());
+
+     // Ver como esta la ventana de la puerta_derecha
+     System.out.println(miCoche.getPuertaD().getVentana());
+
+     // Abrimos la ventana
+     miCoche.getPuertaD().getVentana().abrir();
+     System.out.println(miCoche.getPuertaD().getVentana());
+
+     // Queremos trabajar con la ventana puerta_derecha
+     // Es mas comodo si la guardamos en una variable
+     Ventana_Derecha_Coche = miCoche.getPuertaD().getVentana();
+     Ventana_Derecha_Coche.abrir();
+     System.out.println(Ventana_Derecha_Coche);
+     Ventana_Derecha_Coche.cerrar();
+     System.out.println(Ventana_Derecha_Coche);
+
+     miCoche.abrirVentanaDerecha();
+     System.out.println(miCoche);
+
 
  }
 }
