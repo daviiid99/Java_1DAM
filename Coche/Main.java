@@ -1,9 +1,13 @@
+import java.util.Scanner;
+
 class Main {
  public static void main (String[] args){
  	Motor miMotor = new Motor();
  	Puerta miPuertaVentana = new Puerta();
  	Coche miCoche = new Coche();
   Ventana Ventana_Derecha_Coche = new Ventana();
+  Scanner teclado = new Scanner(System.in);
+  int preguntar;
 
  	/** miPuertaVentana.abrir();
 
@@ -22,6 +26,7 @@ class Main {
 // (Con ventana)
 // Motor: encendido | PuertaI:{ Puerta: Abierta | Ventana: Abierta}| PuertaD{ Puerta: Abierta | Ventana: Abierta}
 
+/**
 	// Primero, encendemos el motor
 	miCoche.getMotor().encender();
 
@@ -99,6 +104,44 @@ class Main {
      miCoche.abrirVentanaDerecha();
      System.out.println(miCoche);
 
+     // Devolvemos todo a default
+     miCoche.getMotor().apagar();
+     miCoche.getPuertaI().cerrar();
+  	 miCoche.getPuertaD().cerrar();
+     miCoche.getPuertaI().getVentana().cerrar();
+     miCoche.getPuertaD().getVentana().cerrar();
+     */
+
+     // Primero, vamos a llamar a nuestro Coche para ver todas nuestras nuevas puertas! Y sus ventanas!
+     System.out.println("\n-------------------------------------------------");
+     System.out.println(miCoche);
+     System.out.println("-------------------------------------------------\n");
+
+     // Ahora que tenemos todos los componentes
+     // El siguiente paso es dar al usuario la opcion de abrir cada puerta
+     System.out.printf("\nElige cual de las puertas de nuestro coche abrir\nEscribiendo un numero del 1 al 4 siguiendo el siguiente esquema:\n\nPuerta Delantera Izquierda: 1\nPuerta Delantera Derecha: 2\nPuerta Trasera Izquierda: 3\nPuerta Trasera Derecha: 4\n\nPuerta: ");
+     preguntar = teclado.nextInt();
+
+     // Ese valor se comparte con el metodo abrirPuertaUsuario de la clase coche
+     miCoche.abrirPuertaUsuario(preguntar);
+
+     // Imprimimos nuestro coche para comprobar su estado
+     System.out.println("\n-------------------------------------------------");
+     System.out.println(miCoche);
+     System.out.println("-------------------------------------------------\n");
+
+
+     // El siguiente paso es dar al usuario la opcion de abrir la ventana que desee
+     System.out.printf("\nElige cual de las ventanas de nuestro coche abrir\nEscribiendo un numero del 1 al 4 siguiendo el siguiente esquema:\n\nVentana Puerta Delantera Izquierda: 1\nVentana Puerta Delantera Derecha: 2\nVentana Puerta Trasera Izquierda: 3\nVentana Puerta Trasera Derecha: 4\n\nVentana: ");
+     preguntar = teclado.nextInt();
+
+     // Ese valor se comparte con el metodo abrirVentanaUsuario de la clase coche
+     miCoche.abrirVentanaUsuario(preguntar);
+
+     // Imprimimos nuestro coche para comprobar su estado
+     System.out.println("\n-------------------------------------------------");
+     System.out.println(miCoche);
+     System.out.println("-------------------------------------------------\n");
 
  }
 }
