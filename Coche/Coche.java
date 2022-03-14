@@ -41,22 +41,22 @@ public void abrirVentanaDerecha(){
 
 public void abrirPuertaUsuario(int numero){
 	if ( numero == 1){
-		this.getPuertaI().abrir();
+		this.puerta_izquierda.abrir();
 		System.out.println("Puerta Delantera Izquierda cambio su estado a: Abierta");
 	}
 
 	if ( numero == 2){
-		this.getPuertaD().abrir();
+		this.puerta_derecha.abrir();
 		System.out.println("\n!!Puerta Delantera Derecha cambio su estado a: Abierta!!\n");
 	}
 
 	if ( numero == 3){
-		this.getPuertaTI().abrir();
+		this.puerta_trasera_izquierda.abrir();
 		System.out.println("\n!!Puerta Trasera Izquierda cambio su estado a: Abierta!!\n");
 	}
 
 	if ( numero == 4){
-		this.getPuertaTD().abrir();
+		this.puerta_trasera_derecha.abrir();
 		System.out.println("\n!!Puerta Trasera Derecha cambio su estado a: Abierta!!\n");
 	}
 
@@ -68,12 +68,12 @@ public void abrirPuertaUsuario(int numero){
 
 public void abrirVentanaUsuario(int numero){
 	if (numero == 1){
-		this.getPuertaI().getVentana().abrir();
+		this.puerta_izquierda.getVentana().abrir();
 		System.out.println("\n!!Ventana Delantera Izquierda cambio su estado a: Abierta!!\n");
 	}
 
 	if (numero == 2){
-		this.getPuertaD().getVentana().abrir();
+		this.puerta_derecha.getVentana().abrir();
 		System.out.println("\n!!Ventana Delantera Derecha cambio su estado a: Abierta!!\n");
 	}
 
