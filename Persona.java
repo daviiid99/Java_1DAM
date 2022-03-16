@@ -10,7 +10,7 @@ public class Persona{
   // Constructor
 
   public Persona(){
-    this.nombre = "Celia";
+    this.nombre = "David";
     this.dni = "12345678A";
   }
 
@@ -31,12 +31,16 @@ public class Persona{
 
   // Set
 
-  public void setnombre(String nombre){
+  public void setNombre(String nombre){
     this.nombre = nombre;
   }
 
   public void setDni(String dni){
     this.dni = dni;
+  }
+
+  public String toString(){
+    return "Me llamo " + this.nombre + " y mi dni es " + this.dni;
   }
 
 }
