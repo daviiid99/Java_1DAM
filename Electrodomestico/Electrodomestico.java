@@ -120,14 +120,14 @@ public Electrodomestico(Electrodomestico electrodomestico){
     return descuento;
   }
 
-  public double DeterminarDescuentoPeso(double peso){
+  public double DeterminarImportePeso(double peso){
     return (Math.floor(peso/20))*30;
   }
 
 
 
   public double precio_final(double precio_base, String consumo_energetico, double peso, String color){
-    double precio_final =  precio_base + DeterminarImporteConsumo(precio_base, consumo_energetico) + DeterminarDescuentoPeso(peso) -
+    double precio_final =  precio_base + DeterminarImporteConsumo(precio_base, consumo_energetico) + DeterminarImportePeso(peso) -
     DeterminarDescuentoBlanco(color);
 
     return precio_final;
