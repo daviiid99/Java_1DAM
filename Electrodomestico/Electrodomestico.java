@@ -86,13 +86,19 @@ public Electrodomestico(Electrodomestico electrodomestico){
   }
 
   public void comprobar_Color(String color){
-    if (!(comprobar_Valor_En_Lista(color, COLORES))) this.color = COLOR;
-    if (comprobar_Valor_En_Lista(color, COLORES)) this.color = color.toUpperCase();
+    if (comprobar_Valor_En_Lista(color, COLORES)){
+      this.color = color.toUpperCase();
+    } else {
+    this.color = COLOR;
+    }
   }
 
   public void comprobar_Consumo(String consumo){
-    if (!(comprobar_Valor_En_Lista(consumo, CONSUMOS))) this.consumo_energetico = CONSUMO;
-    if (comprobar_Valor_En_Lista(consumo, CONSUMOS)) this.consumo_energetico = consumo;
+    if (comprobar_Valor_En_Lista(consumo, CONSUMOS)){
+      this.consumo_energetico = consumo.toUpperCase();
+    } else {
+    this.consumo_energetico = CONSUMO;
+    }
   }
 
   public boolean comprobar_Valor_En_Lista(String valor, ArrayList<String> lista){
