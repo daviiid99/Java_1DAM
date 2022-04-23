@@ -121,7 +121,7 @@ public Electrodomestico(Electrodomestico electrodomestico){
   }
 
   public double DeterminarDescuentoPeso(double peso){
-    return (peso/20)*30;
+    return (Math.floor(peso/20))*30;
   }
 
 
