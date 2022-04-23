@@ -127,10 +127,10 @@ public Electrodomestico(Electrodomestico electrodomestico){
 
 
   public double precio_final(double precio_base, String consumo_energetico, double peso, String color){
-    double precio_final = DeterminarImporteConsumo(precio_base, consumo_energetico) -
-    DeterminarDescuentoBlanco(color) + DeterminarDescuentoPeso(peso);
+    double precio_final =  precio_base + DeterminarImporteConsumo(precio_base, consumo_energetico) + DeterminarDescuentoPeso(peso) -
+    DeterminarDescuentoBlanco(color);
 
-    return precio_base + precio_final;
+    return precio_final;
 
   }
 
