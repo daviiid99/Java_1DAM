@@ -21,7 +21,7 @@ class Electrodomestico{
   private double peso;
 
   // Variables estáticas
-  private final static String COLOR = "blanco";
+  private final static String COLOR = "BLANCO";
   private final static  double PRECIO = 100;
   private final static  String CONSUMO = "F";
   private final static double PESO = 20;
@@ -122,7 +122,7 @@ public Electrodomestico(Electrodomestico electrodomestico){
 
   public int DeterminarDescuentoBlanco(String color){
     int descuento = 0;
-    if ( color == COLOR) descuento = 20;
+    if ( color.toUpperCase() == COLOR) descuento = 20;
     return descuento;
   }
 
