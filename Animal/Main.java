@@ -41,7 +41,6 @@ class Main{
           if (Integer.valueOf(preguntar) == 3) comida = "Pienso Barato";
           System.out.println("\n" + miGato.comiendo(comida) + " a " + miGato.getNombreMascota() + "\n");
         }
-
         else if (Integer.valueOf(preguntar) == 6){
           miGato.follando();
           if (miGato.getNumeroCrias() != 0){
@@ -50,19 +49,16 @@ class Main{
             System.out.println("Tu " + miGato.getNombre() + " no ha tenido gatitos :(");
           }
         }
-
         else if (Integer.valueOf(preguntar) == 7){
           miGato.setAcariciarGato();
           System.out.println("Has acariciado a " + miGato.getNombreMascota() + "... Parece que le ha gustado\n^-^\n" );
         }
-
         else if (Integer.valueOf(preguntar) == 8){
           miGato.vaciarDeposito();
           System.out.println("Has tirado de la cadena\n" );
         }
-
         else if (Integer.valueOf(preguntar) == 9){
-          System.out.println("Tu nivel de amistad con " + miGato.getNombre() + "es de " + miGato.getNivelAmistad()+"/10");
+          System.out.println("Tu nivel de amistad con " + miGato.getNombre() + " es de " + miGato.getNivelAmistad()+"/10");
         }
         else {
           System.out.println("Hasta luego, " + miGato.getNombreMascota() + "!");
@@ -87,11 +83,9 @@ class Main{
           else if (Integer.valueOf(preguntar) == 3){
             System.out.println("\n" + miPato.getNombreMascota() + " ha dicho " + miPato.onomatopeya() + "\n");
           }
-
           else if (Integer.valueOf(preguntar) == 4){
             System.out.println("\n" + miPato.durmiendo() + "... Parece que " + miPato.getNombreMascota() + " se ha dormido\n");
           }
-
           else if (Integer.valueOf(preguntar) == 5){
             System.out.println("\nQue quieres dar de comer a  " + miPato.getNombreMascota() + ": \n1: Pan\n2: Palomitas\n3: Bebida con superpoderes");
             preguntar = teclado.nextLine();
@@ -101,7 +95,6 @@ class Main{
             if (Integer.valueOf(preguntar) == 3) comida = "Bebida con superpoderes";
             System.out.println("\n" + miPato.comiendo(comida) + " a " + miPato.getNombreMascota() + "\n");
           }
-
           else if (Integer.valueOf(preguntar) == 6){
             miPato.follando();
             if (miPato.getNumeroCrias() != 0){
@@ -110,22 +103,17 @@ class Main{
               System.out.println("Tu " + miPato.getNombre() + " no ha tenido patitos :(");
             }
           }
-
           else if (Integer.valueOf(preguntar) == 7){
             miPato.setAcariciarPato();
             System.out.println("Has acariciado a " + miPato.getNombreMascota() + "... Parece que le ha gustado\n^-^\n" );
           }
-
           else if (Integer.valueOf(preguntar) == 8){
             miPato.vaciarDeposito();
             System.out.println("Has tirado de la cadena\n" );
           }
-
           else if (Integer.valueOf(preguntar) == 9){
-            System.out.println("Tu nivel de amistad con " + miPato.getNombre() + "es de " + miPato.getNivelAmistad()+"/10");
+            System.out.println("Tu nivel de amistad con " + miPato.getNombre() + " es de " + miPato.getNivelAmistad()+"/10");
           }
-
-
           else {
             System.out.println("Hasta luego, " + miPato.getNombreMascota() + "!");
           }
@@ -150,5 +138,5 @@ class Main{
     jugarConMascota(preguntar, pet, teclado,  miGato, miPato, deposito_caca);
 
 
-}
+  }
 }

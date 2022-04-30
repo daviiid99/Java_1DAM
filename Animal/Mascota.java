@@ -5,8 +5,16 @@ class Mascota {
   public final static int NIVEL_AMISTAD = 0;
   public final static String NOMBRE = "Lucas";
 
+  public Mascota(){
+    this(NOMBRE);
+  }
+
+  public Mascota(String nombre){
+    darNombreMascota(nombre);
+  }
+
   public void setNivelAmistad(){
-    this.nivel_amistad += 1;
+    if (this.nivel_amistad < 10 ) this.nivel_amistad += 1;
   }
 
   public int getNivelAmistad(){

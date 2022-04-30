@@ -59,6 +59,10 @@ class Gato extends Mascota implements Animal_interface {
     this.excretando = excretando;
   }
 
+  public int getExcretando(){
+    return this.excretando;
+  }
+
   public void setDeposito(int deposito_caca){
     this.deposito_caca += deposito_caca;
   }
