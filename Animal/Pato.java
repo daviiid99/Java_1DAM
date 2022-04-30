@@ -85,11 +85,18 @@ class Pato extends Mascota implements Animal_interface{
   }
 
 
-  public int follando(){
-    // Probabilidades de obtener gatitos / Un Numero Del 0 al 6
+  public boolean follando(){
+    // Probabilidades de obtener patitos / Es del 60%
     Random rand = new Random();
-    setNumeroCrias(rand.nextInt(7));
-    return 0;
+    boolean bebes = false;
+    int probabilidadBebes = rand.nextInt(100+1);
+
+    if (probabilidadBebes <=60){
+      bebes = true;
+      setNumeroCrias(rand.nextInt(10) + 1);
+
+    }
+    return bebes;
   }
 
 

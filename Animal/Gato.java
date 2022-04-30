@@ -110,11 +110,18 @@ class Gato extends Mascota implements Animal_interface {
   }
 
 
-  public int follando(){
-    // Probabilidades de obtener gatitos / Un Numero Del 0 al 9
+  public boolean follando(){
+    // Probabilidades de obtener gatitos / Es del 90%
     Random rand = new Random();
-    setNumeroCrias(rand.nextInt(10));
-    return 0;
+    boolean bebes = false;
+    int probabilidadBebes = rand.nextInt(100+1);
+    
+    if (probabilidadBebes <=90){
+      bebes = true;
+      setNumeroCrias(rand.nextInt(10) + 1);
+
+    }
+    return bebes;
   }
 
 }
