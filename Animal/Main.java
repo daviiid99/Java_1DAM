@@ -36,7 +36,11 @@ class Main{
           System.out.println("\nQue quieres dar de comer a  " + miGato.getNombreMascota() + ": \n1: Sardinas Premium\n2: Pate XXL\n3: Pienso Barato");
           preguntar = teclado.nextLine();
           String comida = "";
-          if (Integer.valueOf(preguntar) == 1) comida = "Sardinas Premium";
+          if (Integer.valueOf(preguntar) == 1){
+            miGato.setNivelAmistad();
+            System.out.println("\n^.^ Parece que le ha gustado\nTu amistad con " + miGato.getNombre() + " ha subido 1 punto");
+            comida = "Sardinas Premium";
+          }
           if (Integer.valueOf(preguntar) == 2) comida = "Pate XXL";
           if (Integer.valueOf(preguntar) == 3) comida = "Pienso Barato";
           System.out.println("\n" + miGato.comiendo(comida) + " a " + miGato.getNombreMascota() + "\n");
@@ -92,7 +96,11 @@ class Main{
             String comida = "";
             if (Integer.valueOf(preguntar) == 1) comida = "Pan";
             if (Integer.valueOf(preguntar) == 2) comida = "Palomitas";
-            if (Integer.valueOf(preguntar) == 3) comida = "Bebida con superpoderes";
+            if (Integer.valueOf(preguntar) == 3){
+              miPato.setNivelAmistad();
+              System.out.println("\n^.^ Parece que le ha gustado\nTu amistad con " + miPato.getNombre() + " ha subido 1 punto");
+              comida = "Bebida con superpoderes";
+            }
             System.out.println("\n" + miPato.comiendo(comida) + " a " + miPato.getNombreMascota() + "\n");
           }
           else if (Integer.valueOf(preguntar) == 6){

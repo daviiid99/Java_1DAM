@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Pato extends Mascota implements Animal_interface{
   protected int excretando;
   protected int deposito_caca;
@@ -75,7 +77,7 @@ class Pato extends Mascota implements Animal_interface{
 
 
   public void setNumeroCrias(int crias){
-    this.crias = (int)(Math.random()*9);
+    this.crias = crias;
   }
 
   public int getNumeroCrias(){
@@ -84,8 +86,9 @@ class Pato extends Mascota implements Animal_interface{
 
 
   public int follando(){
-    // Probabilidades de obtener gatitos / Un Numero Del 0 al 9
-    setNumeroCrias((int)(Math.random()*9));
+    // Probabilidades de obtener gatitos / Un Numero Del 0 al 6
+    Random rand = new Random();
+    setNumeroCrias(rand.nextInt(7));
     return 0;
   }
 
