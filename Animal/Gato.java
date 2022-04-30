@@ -22,6 +22,7 @@
 class Gato extends Mascota implements Animal_interface {
   protected int excretando;
   protected int deposito_caca;
+  protected int crias;
 
   public final static int EXCRETANDO = 0;
   public final static int DEPOSITO = 0;
@@ -95,8 +96,18 @@ class Gato extends Mascota implements Animal_interface {
     return loQueToca;
   }
 
+  public void setNumeroCrias(int crias){
+    this.crias = (int)(Math.random()*9);
+  }
+
+  public int getNumeroCrias(){
+    return this.crias;
+  }
+
 
   public int follando(){
+    // Probabilidades de obtener gatitos / Un Numero Del 0 al 9
+    setNumeroCrias((int)(Math.random()*9));
     return 0;
   }
 

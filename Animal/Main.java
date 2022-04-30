@@ -18,7 +18,7 @@ class Main{
     pet = teclado.nextLine();
     miGato = new Gato(pet);
     while (Integer.valueOf(preguntar) != 10){
-      System.out.println("\n---------- Elige que hacer con " + miGato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Hacer el amor\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
+      System.out.println("\n---------- Elige que hacer con " + miGato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Aparearse\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
         preguntar = teclado.nextLine();
         if (Integer.valueOf(preguntar) == 1){
           System.out.println("\nTu  " + miGato.getNombreMascota() + " ha hecho " + miGato.excretando(deposito_caca) + "\n");
@@ -40,6 +40,15 @@ class Main{
           if (Integer.valueOf(preguntar) == 2) comida = "Pate XXL";
           if (Integer.valueOf(preguntar) == 3) comida = "Pienso Barato";
           System.out.println("\n" + miGato.comiendo(comida) + " a " + miGato.getNombreMascota() + "\n");
+        }
+
+        else if (Integer.valueOf(preguntar) == 6){
+          miGato.follando();
+          if (miGato.getNumeroCrias() != 0){
+            System.out.println("Tu " + miGato.getNombre() + " ha tenido " + miGato.getNumeroCrias() + " gatitos");
+          } else {
+            System.out.println("Tu " + miGato.getNombre() + " no ha tenido gatitos :(");
+          }
         }
 
         else if (Integer.valueOf(preguntar) == 7){
@@ -67,7 +76,7 @@ class Main{
     pet = teclado.nextLine();
     miPato = new Pato(pet);
     while (Integer.valueOf(preguntar) != 10){
-      System.out.println("\n---------- Elige que hacer con " + miPato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Hacer el amor\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
+      System.out.println("\n---------- Elige que hacer con " + miPato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Aparearse\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
           preguntar = teclado.nextLine();
           if (Integer.valueOf(preguntar) == 1){
             System.out.println("\nTu " + miPato.getNombreMascota() + " ha hecho " + miPato.excretando(deposito_caca) + "\n");
@@ -91,6 +100,15 @@ class Main{
             if (Integer.valueOf(preguntar) == 2) comida = "Palomitas";
             if (Integer.valueOf(preguntar) == 3) comida = "Bebida con superpoderes";
             System.out.println("\n" + miPato.comiendo(comida) + " a " + miPato.getNombreMascota() + "\n");
+          }
+
+          else if (Integer.valueOf(preguntar) == 6){
+            miPato.follando();
+            if (miPato.getNumeroCrias() != 0){
+              System.out.println("Tu " + miPato.getNombre() + " ha tenido " + miPato.getNumeroCrias() + " patitos");
+            } else {
+              System.out.println("Tu " + miPato.getNombre() + " no ha tenido patitos :(");
+            }
           }
 
           else if (Integer.valueOf(preguntar) == 7){
