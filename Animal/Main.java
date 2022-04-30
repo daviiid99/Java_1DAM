@@ -18,10 +18,10 @@ class Main{
     pet = teclado.nextLine();
     miGato = new Gato(pet);
     while (Integer.valueOf(preguntar) != 10){
-      System.out.println("\n---------- Elige que hacer con " + miGato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Aparearse\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
+      System.out.println("\n---------- Elige que hacer con " + miGato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Hora de Cantar!\n4: Ir a Dormir\n5: Dar de comer\n6: Aparearse con otro animal\n7: Acariciar\n8: Limpiar Retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
         preguntar = teclado.nextLine();
         if (Integer.valueOf(preguntar) == 1){
-          System.out.println("\nTu  " + miGato.getNombreMascota() + " ha hecho " + miGato.excretando(deposito_caca) + "\n");
+          System.out.println("\nTu " + miGato.getNombreMascota() + " ha hecho " + miGato.excretando(deposito_caca) + "\n");
         }
         else if (Integer.valueOf(preguntar) == 2){
           System.out.println("\nTu " + miGato.getNombreMascota() +  " hizo caca " + miGato.getDepositoCaca() + " veces\n");
@@ -58,11 +58,16 @@ class Main{
           System.out.println("Has acariciado a " + miGato.getNombreMascota() + "... Parece que le ha gustado\n^-^\n" );
         }
         else if (Integer.valueOf(preguntar) == 8){
-          miGato.vaciarDeposito();
-          System.out.println("Has tirado de la cadena\n" );
+          if (miGato.getDepositoCaca() < 3){
+            System.out.println("\nNo pasó nada ...");
+          } else {
+            miGato.vaciarDeposito();
+            System.out.println("\nHas tirado de la cadena\n" );
+          }
+
         }
         else if (Integer.valueOf(preguntar) == 9){
-          System.out.println("Tu nivel de amistad con " + miGato.getNombre() + " es de " + miGato.getNivelAmistad()+"/10");
+          System.out.println("Tu nivel de amistad con " + miGato.getNombre() + " es " + miGato.getNivelAmistad()+"/10");
         }
         else {
           System.out.println("Hasta luego, " + miGato.getNombreMascota() + "!");
@@ -76,7 +81,7 @@ class Main{
     pet = teclado.nextLine();
     miPato = new Pato(pet);
     while (Integer.valueOf(preguntar) != 10){
-      System.out.println("\n---------- Elige que hacer con " + miPato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Canta " + pet + "!\n4: Ir a Dormir\n5: Dar de comer a " + pet +"\n6: Aparearse\n7: Acariciar a " + pet + "\n8: Limpiar retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
+      System.out.println("\n---------- Elige que hacer con " + miPato.getNombreMascota() + "--------\n1: Ir al Toilet\n2: Ver Retrete\n3: Hora de Cantar!\n4: Ir a Dormir\n5: Dar de comer\n6: Aparearse con otro animal\n7: Acariciar\n8: Limpiar Retrete\n9: Ver nivel amistad\n10: Dejar de jugar");
           preguntar = teclado.nextLine();
           if (Integer.valueOf(preguntar) == 1){
             System.out.println("\nTu " + miPato.getNombreMascota() + " ha hecho " + miPato.excretando(deposito_caca) + "\n");
@@ -116,11 +121,16 @@ class Main{
             System.out.println("Has acariciado a " + miPato.getNombreMascota() + "... Parece que le ha gustado\n^-^\n" );
           }
           else if (Integer.valueOf(preguntar) == 8){
-            miPato.vaciarDeposito();
-            System.out.println("Has tirado de la cadena\n" );
+            if (miPato.getDepositoCaca() < 3){
+              System.out.println("\nNo pasó nada ...");
+            } else {
+              miPato.vaciarDeposito();
+              System.out.println("\nHas tirado de la cadena\n" );
+            }
+
           }
           else if (Integer.valueOf(preguntar) == 9){
-            System.out.println("Tu nivel de amistad con " + miPato.getNombre() + " es de " + miPato.getNivelAmistad()+"/10");
+            System.out.println("Tu nivel de amistad con " + miPato.getNombre() + " es " + miPato.getNivelAmistad()+"/10");
           }
           else {
             System.out.println("Hasta luego, " + miPato.getNombreMascota() + "!");
