@@ -8,5 +8,5 @@ public interface Animal_interface{
   public String onomatopeya();
   public String excretando(int deposito_caca);
   public int follando();
-
+ 
 }
