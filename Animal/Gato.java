@@ -68,12 +68,12 @@ class Gato extends Mascota implements Animal_interface {
     this.deposito_caca += deposito_caca;
   }
 
-  public void vaciarDeposito(){
-    if (deposito_caca >=3) this.deposito_caca = 0;
+  public void vaciarDeposito(int deposito_caca){
+    if (deposito_caca >=3) super.limpiar_excrementos();
   }
 
   public int getDepositoCaca(){
-    return this.deposito_caca;
+    return super.getExcrementos();
   }
 
   public String onomatopeya(){
@@ -96,7 +96,7 @@ class Gato extends Mascota implements Animal_interface {
       loQueToca = "caca";
       excretando = 0;
       this.deposito_caca+=1;
-      setDeposito(deposito_caca);
+      super.irAlBanio(this.deposito_caca);
     }
     return loQueToca;
   }

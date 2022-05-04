@@ -41,6 +41,7 @@ class Pato extends Mascota implements Animal_interface{
     this.excretando = excretando;
   }
 
+
   public int getExcretando(){
     return this.excretando;
   }
@@ -49,12 +50,12 @@ class Pato extends Mascota implements Animal_interface{
     this.deposito_caca += deposito_caca;
   }
 
-  public void vaciarDeposito(){
-    if (deposito_caca >=3) this.deposito_caca = 0;
+  public void vaciarDeposito(int deposito_caca){
+    if (deposito_caca >=3) super.limpiar_excrementos();
   }
 
   public int getDepositoCaca(){
-    return this.deposito_caca;
+    return super.getExcrementos();
   }
 
   public String onomatopeya(){
@@ -71,7 +72,7 @@ class Pato extends Mascota implements Animal_interface{
 
   public String excretando(int deposito_caca){
     this.deposito_caca+=1;
-    setDeposito(deposito_caca);
+    super.irAlBanio(this.deposito_caca);
     return "picaca";
   }
 

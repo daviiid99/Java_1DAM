@@ -46,8 +46,7 @@ class Main{
           System.out.println("\n" + miGato.comiendo(comida) + " a " + miGato.getNombreMascota() + "\n");
         }
         else if (Integer.valueOf(preguntar) == 6){
-          miGato.follando();
-          if (miGato.getNumeroCrias() != 0){
+          if (miGato.follando()  == true){
             System.out.println("Tu " + miGato.getNombre() + " ha tenido " + miGato.getNumeroCrias() + " gatitos");
           } else {
             System.out.println("Tu " + miGato.getNombre() + " no ha tenido gatitos :(");
@@ -61,7 +60,7 @@ class Main{
           if (miGato.getDepositoCaca() < 3){
             System.out.println("\nNo pasó nada ...");
           } else {
-            miGato.vaciarDeposito();
+            miGato.vaciarDeposito(miGato.getDepositoCaca());
             System.out.println("\nHas tirado de la cadena\n" );
           }
 
@@ -109,8 +108,7 @@ class Main{
             System.out.println("\n" + miPato.comiendo(comida) + " a " + miPato.getNombreMascota() + "\n");
           }
           else if (Integer.valueOf(preguntar) == 6){
-            miPato.follando();
-            if (miPato.getNumeroCrias() != 0){
+            if (miPato.follando() == true){
               System.out.println("Tu " + miPato.getNombre() + " ha tenido " + miPato.getNumeroCrias() + " patitos");
             } else {
               System.out.println("Tu " + miPato.getNombre() + " no ha tenido patitos :(");
@@ -124,7 +122,7 @@ class Main{
             if (miPato.getDepositoCaca() < 3){
               System.out.println("\nNo pasó nada ...");
             } else {
-              miPato.vaciarDeposito();
+              miPato.vaciarDeposito(miPato.getDepositoCaca());
               System.out.println("\nHas tirado de la cadena\n" );
             }
 
