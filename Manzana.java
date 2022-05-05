@@ -1,5 +1,4 @@
 public class Manzana extends Fruta {
-  protected int peso;
   protected boolean ser_perfecta;
 
   public Manzana(){
