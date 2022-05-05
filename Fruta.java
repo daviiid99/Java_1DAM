@@ -6,39 +6,55 @@ public class Fruta implements Fruta_Interface {
   protected String nombre;
 
   public Fruta(){
-    this(COLOR, PESO, FORMA);
+    this(COLOR, PESO, FORMA, TEXTURA, NOMBRE);
   }
 
-  public Fruta(String color, int peso, String forma){
-    color(color);
-    peso(peso);
-    forma(forma);
-    textura(TEXTURA);
-    nombre(NOMBRE);
+  public Fruta(String color, int peso, String forma, String textura, String nombre){
+    setPeso(peso);
+    setColor(color);
+    setForma(forma);
+    setTextura(textura);
+    setNombre(nombre);
   }
 
-  public void textura(String textura){
+  public void setNombre(String nombre){
+    this.nombre = nombre;
+  }
+
+  public String getNombre(){
+    return this.nombre;
+  }
+
+  public void setTextura(String textura){
     this.textura = textura;
   }
 
-  public String textura(){
+  public String getTextura(){
     return this.textura;
   }
 
-  public void color(String color){
+  public void setPeso(int peso){
+    this.peso = peso;
+  }
+
+  public int getPeso(){
+    return this.peso;
+  }
+
+  public void setForma(String forma){
+  this.forma = forma;
+  }
+
+  public String getForma(){
+    return this.forma;
+  }
+
+  public void setColor(String color){
     this.color = color;
   }
 
-  public void nombre(String nombre){
-    this.nombre = nombre;
-}
-
-  public void forma(String forma){
-      this.forma = forma;
-  }
-
-  public void peso(int peso){
-    this.peso = peso;
+  public String getColor(){
+    return this.color;
   }
 
   public int peso_mitad(){
@@ -46,6 +62,6 @@ public class Fruta implements Fruta_Interface {
   }
 
   public String toString(){
-    return "\n----Fruta-----" + "\nNombre : " + this.nombre + "\nColor : " + this.color + "\nPeso : " + this.peso + "\nForma : " + this.forma + "\n Textura : " + textura();
+    return "\n----Fruta-----" + "\nNombre : " + this.nombre + "\nColor : " + this.color + "\nPeso : " + this.peso + "\nForma : " + this.forma + "\n Textura : " + this.textura;
   }
 }

@@ -2,21 +2,11 @@ public class Manzana extends Fruta {
   protected boolean ser_perfecta;
 
   public Manzana(){
-    super(COLOR, PESO, FORMA);
+    super();
   }
 
-  public Manzana(String color, int peso, String forma){
-    super(color, peso, forma);
-    setPeso(peso);
-
-  }
-
-  public void setPeso(int peso){
-    this.peso = peso;
-  }
-
-  public int getPeso(){
-    return this.peso;
+  public Manzana(String color, int peso, String forma, String textura, String nombre){
+    super(color, peso, forma, textura, nombre);
   }
 
   public boolean ser_perfecta(){

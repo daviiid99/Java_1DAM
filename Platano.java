@@ -1,12 +1,11 @@
 public class Platano extends Fruta  {
 
   public Platano(){
-    super(COLOR, PESO, FORMA);
+    super();
   }
 
-  public Platano(String color, int peso, String forma){
-    super(color, peso, forma);
-
+  public Platano(String color, int peso, String forma, String textura, String nombre){
+    super(color, peso, forma, textura, nombre);
   }
 
   public String toString(){

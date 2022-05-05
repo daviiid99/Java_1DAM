@@ -5,19 +5,22 @@ class Main{
     Platano miPlatano = new Platano();
     Manzana_Golden miManzanaGolden = new Manzana_Golden();
 
-    miPlatano.textura("POCHA");
-    miPlatano.color("AMARILLO");
-    miPlatano.nombre("PLATANO");
-    miPlatano.forma("ALARGADA");
-    miPlatano.peso(100);
+    miPlatano.setTextura("POCHA");
+    miPlatano.setColor("AMARILLO");
+    miPlatano.setNombre("PLATANO");
+    miPlatano.setForma("ALARGADA");
+    miPlatano.setPeso(100);
     System.out.println(miPlatano + "\nPeso mitad : " + miPlatano.peso_mitad());
 
-    miManzana.textura("LISA");
-    miManzana.nombre("MANZANA");
-    miManzana.forma("REDONDA");
+    miManzana.setTextura("LISA");
+    miManzana.setNombre("MANZANA");
+    miManzana.setForma("REDONDA");
     System.out.println(miManzana + "\nPeso mitad : " + miManzana.peso_mitad());
-    miManzanaGolden = new Manzana_Golden("NARANJA", 300, "REDONDITA");
+    miManzanaGolden = new Manzana_Golden("NARANJA", 300, "REDONDITA", "LISA", "MANZANA golden");
     System.out.println(miManzanaGolden);
+
+    System.out.println(miPlatano.getColor());
+    System.out.println(miManzanaGolden.getNombre());
 
   }
 }
