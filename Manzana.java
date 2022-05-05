@@ -1,15 +1,16 @@
-public class Manzana extends Fruta implements Fruta_Interface {
+public class Manzana extends Fruta {
 
   public Manzana(){
     super(COLOR, PESO, FORMA);
   }
 
-  public String textura(){
-    return "lisa";
+  public Manzana(String color, int peso, String forma){
+    super(color, peso, forma);
+
   }
 
   public String toString(){
-    return super.toString() + "\n Textura : " + textura();
+    return super.toString();
   }
 
 
