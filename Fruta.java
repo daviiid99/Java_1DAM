@@ -1,4 +1,4 @@
-public abstract class Fruta implements Fruta_Interface {
+public class Fruta implements Fruta_Interface {
   protected String color;
   protected int peso;
   protected String forma;

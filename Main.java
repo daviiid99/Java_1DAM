@@ -16,7 +16,7 @@ class Main{
     miManzana.nombre("MANZANA");
     miManzana.forma("REDONDA");
     System.out.println(miManzana + "\nPeso mitad : " + miManzana.peso_mitad());
-
+    miManzanaGolden = new Manzana_Golden("NARANJA", 300, "REDONDITA");
     System.out.println(miManzanaGolden);
 
   }
