@@ -1,4 +1,4 @@
-public class Fruta implements Fruta_Interface {
+public abstract class Fruta implements Fruta_Interface {
   protected String color;
   protected int peso;
   protected String forma;
@@ -57,9 +57,7 @@ public class Fruta implements Fruta_Interface {
     return this.color;
   }
 
-  public int peso_mitad(){
-    return this.peso/2;
-  }
+  public abstract int peso_mitad();
 
   public String toString(){
     return "\n----Fruta-----" + "\nNombre : " + this.nombre + "\nColor : " + this.color + "\nPeso : " + this.peso + "\nForma : " + this.forma + "\n Textura : " + this.textura;

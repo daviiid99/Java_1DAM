@@ -17,6 +17,10 @@ public class Manzana extends Fruta {
     return ser_perfecta;
   }
 
+  public int peso_mitad(){
+    return this.peso/2;
+  }
+
   public String toString(){
     return super.toString() + "\n Manzana Perfecta : " + ser_perfecta();
   }

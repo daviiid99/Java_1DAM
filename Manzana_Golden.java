@@ -12,6 +12,10 @@ public class Manzana_Golden extends Manzana {
     return "Soy muy brillante y jugosa";
   }
 
+  public int peso_mitad(){
+    return this.peso/2;
+  }
+
   public String toString(){
     return super.toString() + "\nSlogan : " +  slogan();
   }
