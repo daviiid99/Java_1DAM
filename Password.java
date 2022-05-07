@@ -17,17 +17,14 @@ public abstract class Password{
   }
 
   public boolean noRepetidosX3(){
-    int contador = 1;
     esvalida = true;
     for ( int i = 1; i < this.password.length() ; i++){
-      if (this.password.charAt(i) == this.password.charAt(i-1) ){
-        contador +=1;
-      }
+      if (this.password.charAt(i) == this.password.charAt(i-1) && this.password.charAt(i) == this.password.charAt(i+1) ){
+        esvalida = false;
     }
-    if (contador >= 3) esvalida = false;
-
-    return esvalida;
   }
+    return esvalida;
+}
 
   public abstract boolean validSize();
   public abstract boolean validChar();
