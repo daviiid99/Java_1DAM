@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Password_Number extends Password{
   private String[] lista =  null;
-  private final static int VALID_SIZE = 4;
-
   public Password_Number(){
     super();
   }
@@ -15,7 +13,7 @@ public class Password_Number extends Password{
   }
 
   public boolean validSize(){
-    return (password.length() >= VALID_SIZE);
+    return (password.length() >= 4);
   }
 
   public boolean validChar(){

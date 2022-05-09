@@ -1,7 +1,5 @@
 public abstract class Password{
   protected String password;
-  protected boolean esvalida;
-
 
   protected final static String PASSWORD = "123";
 
@@ -17,7 +15,7 @@ public abstract class Password{
   }
 
   public boolean noRepetidosX3(){
-    esvalida = true;
+    boolean esvalida = true;
     int contador = 1;
     char anterior;
     char actual;

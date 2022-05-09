@@ -1,7 +1,5 @@
 public class Password_Char extends Password{
   private boolean esvalida;
-  private final static int VALID_SIZE = 8;
-
 
   public Password_Char(){
     super();
@@ -12,7 +10,7 @@ public class Password_Char extends Password{
   }
 
   public boolean validSize(){
-    return (this.password.length() >= VALID_SIZE);
+    return (this.password.length() >= 8);
   }
 
   public boolean validChar(){
