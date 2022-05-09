@@ -18,16 +18,34 @@ public abstract class Password{
 
   public boolean noRepetidosX3(){
     esvalida = true;
-    for ( int i = 1; i < this.password.length() ; i++){
-      if (this.password.charAt(i) == this.password.charAt(i-1) && this.password.charAt(i) == this.password.charAt(i+1) ){
-        esvalida = false;
-    }
-  }
-    return esvalida;
-}
+    int contador = 1;
+    char anterior;
+    char actual;
+    for (int i = 1; i < this.password.length() & esvalida; i++){
+        actual = this.password.charAt(i);
+        anterior = this.password.charAt(i-1);
+
+        if (actual == anterior){
+            contador +=1;
+        }
+         else {
+            contador = 1;
+         }
+
+        if (contador >=3) esvalida= false;
+
+    } 
+
+    return esvalida;   
+        
+}   
 
   public abstract boolean validSize();
   public abstract boolean validChar();
+
+  public boolean isValid(){
+    return this.noRepetidosX3() && validChar() && validSize();
+  }
 
   public String toString(){
     return "\nPassword : " + this.password + "\nNo Same Value X3 ? :" + noRepetidosX3()  ;
