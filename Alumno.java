@@ -1,12 +1,6 @@
 class Alumno extends Persona{
   private String grado;
 
-  enum Color{
-    AZUL,
-    AMARILLO,
-    VERDE,
-    ROJO
-  }
 
   private enum Nota{
     SOBRESALIENTE, 
