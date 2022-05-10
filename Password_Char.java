@@ -1,5 +1,4 @@
 public class Password_Char extends Password{
-  private boolean esvalida;
 
   public Password_Char(){
     super();
@@ -15,9 +14,8 @@ public class Password_Char extends Password{
 
   public boolean validChar(){
     boolean isChar = this.password.chars().allMatch( Character::isLetter );
-     
-      return isChar;
-        }
+    return isChar;
+  }
 
   public String toString(){
     return super.toString() + "\nValid Size ? : " + validSize() + "\nValid Chars ? " + validChar();
