@@ -13,8 +13,16 @@ public class Password_Number extends Password{
   }
 
   public boolean validChar(){
+    boolean valido = true;
+    for (int i = 0; i <(this.password).length() & valido ; i++){
+      valido = Character.isDigit(this.password.charAt(i));
+    }
+
+    return valido;
+    /*
     boolean isNumeric = this.password.chars().allMatch( Character::isDigit );
     return isNumeric;
+    **/
 
   }
 

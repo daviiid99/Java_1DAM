@@ -13,8 +13,15 @@ public class Password_Char extends Password{
   }
 
   public boolean validChar(){
+    boolean valido = true;
+    for (int i = 0; i < (this.password).length() & valido ; i++){
+      valido = Character.isLetter(this.password.charAt(i));
+    }
+    return valido;
+
+    /*
     boolean isChar = this.password.chars().allMatch( Character::isLetter );
-    return isChar;
+    return isChar; **/
   }
 
   public String toString(){
