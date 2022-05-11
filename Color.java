@@ -11,7 +11,7 @@ enum Color{
 	}
 
 	public int getNumLapices(){
-		return  this.numLapices;
+		return this.numLapices;
 	}
 
 	public void setNumLapices(int num){

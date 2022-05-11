@@ -1,16 +1,18 @@
 enum DaysOfWeek {
-	MONDAY(8),
-	TUESDAY(8),
-	WEDNESDAY(8),
-	THURSDAY(8),
-	FRIDAY(8),
-	SATURDAY(8),
-	SUNDAY(8);
+	MONDAY(8, "HAPPY"),
+	TUESDAY(8, "HAPPY"),
+	WEDNESDAY(4, "SAD"),
+	THURSDAY(2, "SAD"),
+	FRIDAY(8, "HAPPY"),
+	SATURDAY(8, "HAPPY"),
+	SUNDAY(7, "GOOD");
 
 	private int timeOfSleep;
+	private String feeling;
 
-	DaysOfWeek(int sleepTime){
+	DaysOfWeek(int sleepTime, String feeling){
 		setSleepTime(sleepTime);
+		setFeeling(feeling);
 	}
 
 	public void setSleepTime(int sleepTime){
@@ -19,5 +21,17 @@ enum DaysOfWeek {
 
 	public int getSleepTime(){
 		return timeOfSleep;
+	}
+
+	public void setFeeling(String feeling){
+		this.feeling = feeling;
+	}
+
+	public String getFeeling(){
+		return feeling;
+	}
+
+	public String toString(){
+		return "The " + name() + " I've slept  " + this.timeOfSleep + "h and I feel " + this.feeling ;
 	}
 }

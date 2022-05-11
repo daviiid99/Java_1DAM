@@ -70,6 +70,21 @@ class Main{
       miColor = Color.valueOf("AZUL");
 
       System.out.println(miColor.AZUL.getNumLapices());
+
+      System.out.println(miColor.AMARILLO.getNumLapices());
+
+      DaysOfWeek semana;
+
+      DaysOfWeek dias[] = DaysOfWeek.values();
+
+      for ( DaysOfWeek days : dias)
+        if (days.getFeeling().equals("HAPPY")) System.out.println(days.toString());
+
+      
+      semana = DaysOfWeek.valueOf("MONDAY");
+      semana.setFeeling("SO SAD");
+      semana.setSleepTime(12);
+      System.out.println(semana.toString());
     
   }
 }
