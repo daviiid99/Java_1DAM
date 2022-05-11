@@ -32,6 +32,6 @@ enum DaysOfWeek {
 	}
 
 	public String toString(){
-		return "The " + name() + " I've slept  " + this.timeOfSleep + "h and I feel " + this.feeling ;
+		return "The " + name() + " I've slept  " + this.timeOfSleep + "h and I felt " + this.feeling ;
 	}
 }

@@ -78,13 +78,13 @@ class Main{
       DaysOfWeek dias[] = DaysOfWeek.values();
 
       for ( DaysOfWeek days : dias)
-        if (days.getFeeling().equals("HAPPY")) System.out.println(days.toString());
+        if (days.getFeeling().equals("HAPPY")) System.out.println(days);
 
       
       semana = DaysOfWeek.valueOf("MONDAY");
       semana.setFeeling("SO SAD");
       semana.setSleepTime(12);
-      System.out.println(semana.toString());
+      System.out.println(semana);
     
   }
 }
