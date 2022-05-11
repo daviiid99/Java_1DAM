@@ -6,17 +6,20 @@
 public class Persona{
   protected String nombre;
   protected String dni;
+  private DaysOfWeek week;
 
   // Constructor
 
   public Persona(){
     this.nombre = "David";
     this.dni = "12345678A";
+    //this.week = new DaysOfWeek();
   }
 
   public Persona(String nombre, String dni){
     this.nombre = nombre;
     this.dni = dni;
+    this.week = DaysOfWeek.MONDAY;
 
   }
 
