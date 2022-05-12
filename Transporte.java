@@ -82,33 +82,9 @@ class Main{
 		// Le doy a mivehiculo un valor del enum por teclado
 		miVehiculo =  Transporte.valueOf(ask.toUpperCase());
 
-		// Segun el tipo de vehiculo hacemos una cosa u otra
-
-		if (ask.toUpperCase().equals("AVION")){
-			ask_km = miVehiculo.AVION.precio_final(precio_Vel);
-			ask_vel = miVehiculo.AVION.llegar_destino(precio_Vel);
-
-		}
-
-		else if ( ask.toUpperCase().equals("TREN")){
-			ask_km = miVehiculo.TREN.precio_final(precio_Vel);
-			ask_vel = miVehiculo.TREN.llegar_destino(precio_Vel);
-
-		}
-
-		else if ( ask.toUpperCase().equals("COCHE")){
-			ask_km = miVehiculo.COCHE.precio_final(precio_Vel);
-			ask_vel = miVehiculo.COCHE.llegar_destino(precio_Vel);
-
-		}
-
-		else if (ask.toUpperCase().equals("BICICLETA")) {
-			ask_km = miVehiculo.BICICLETA.precio_final(precio_Vel);
-			ask_vel = miVehiculo.BICICLETA.llegar_destino(precio_Vel);
-
-		}
-		
-
+		// Llamamos a las funciones
+		ask_km = miVehiculo.precio_final(precio_Vel);
+		ask_vel = miVehiculo.llegar_destino(precio_Vel);
 
 		// Llamamos a un metodo que devuelve un resumen del trayecto
 		System.out.println(ResumenVehiculo(ask.toUpperCase(), ask_km, ask_vel ));
