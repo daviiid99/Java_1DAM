@@ -64,8 +64,6 @@ class Main{
         String sabor;
         double kilos;
         Helados miHelado;
-        double precio_total;
-        String puntuacion_marca;
 
         System.out.println("\nQue sabor de helado de nuestro surtido desea : \n");
 
@@ -85,13 +83,8 @@ class Main{
         System.out.println("\nCuantos kg de helado de sabor " + sabor + " desea :  \n");
         kilos = scan.nextDouble();
 
-        // Asignamos las variables a las funciones
-        precio_total = miHelado.precio_helado_por_kilos(kilos);
-        puntuacion_marca = miHelado.PopularidadMarca();
-
         // Imprimir por pantalla el resumen de la compra
-
-        System.out.println(ResumenCompra(sabor.toUpperCase(), miHelado.getMarca(), kilos, miHelado.getPrecio(), precio_total, puntuacion_marca));
+        System.out.println(ResumenCompra(sabor.toUpperCase(), miHelado.getMarca(), kilos, miHelado.getPrecio(), miHelado.precio_helado_por_kilos(kilos), miHelado.PopularidadMarca()));
 
     }
 }
