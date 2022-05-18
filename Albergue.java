@@ -1,5 +1,5 @@
 public enum Albergue{
-  SIMPLE(1,50,2),
+  SIMPLE(1,50,5),
   DOBLE(2,80,4),
   TRIPLE(3,100,0),
   MULTIPLE(6,150,4);

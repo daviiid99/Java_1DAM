@@ -23,6 +23,10 @@ public class Main{
     return dinero_reserva;
   }
 
+  public static float adelantarTiempo(float tiempo){
+    return tiempo+=1;
+  }
+
   public static void main(String[] args){
     Scanner sc = new Scanner (System.in);
 
@@ -31,12 +35,13 @@ public class Main{
     int numPersonas = 0, numNoches;
     double precioTotal, precioNoche, precioPorPersona;
     double recaudacionTotal = 0;
+    float tiempo = 0;
     
     // Inicializamos un array a 0
     ArrayList<Albergue> ocupadas = new ArrayList<>();
 
     //Mientras sea valida la habitacion y además queda alguna habitacion libre preguntamos
-    while (ocupadas.size() < 4){
+    while (ocupadas.size() < 4 && tiempo < 24){
       if (ocupadas.size() > 0) ocupadas.clear();
 
       // Creamos un array con todas las habitaciones que haY
@@ -49,7 +54,6 @@ public class Main{
 
       // Vamos a reducir las habitaciones disponibles del tipo seleccionado
       habitacion.setHabitaciones();
-      System.out.println(habitacion.getHabitaciones());
 
        // Cada vez que un tipo de habitacion tenga 0 plazas, se añade a la lista
       for (Albergue h : arrAlbergue){
@@ -79,9 +83,24 @@ public class Main{
       System.out.println("El precio por persona es de: " + precioPorPersona);
       System.out.println("-- Proponer habitacion alternativa con descuento --");
 
-      // Vamos a generar un registro de la recaudacion por habitacion hasta ocuparñas todas
+      // Vamos a generar un registro de la recaudacion por habitacion hasta ocuparlas todas
       recaudacionTotal += recaudacionTotal(precioTotal);
-      System.out.println("\nRecaducacion del Albergue : \n" + recaudacionTotal);
+      System.out.println("\nRecaudacion del Albergue : \n" + recaudacionTotal);
+
+      // Vamos a aumentar 1h por cada reserva hasta alcanzar las 24h
+      tiempo = adelantarTiempo(tiempo);
+      System.out.println("Hora: \n Son las " + tiempo + "h");
+
+      // Imprimir en caso de quedarse sin habitaciones
+      if (ocupadas.size() == 4){
+        System.out.println("\nLo sentimos, nos hemos quedado sin habitaciones!\nQue tenga un buen día!");
+      }
+
+      // Imprimir en caso de ser la hora de cerrar
+      if ( tiempo == 24.0){
+        System.out.println("\nLo sentimos, es la hora de cerrar!");
+      }
+
 
     }
 
