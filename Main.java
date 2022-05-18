@@ -20,7 +20,7 @@ public class Main{
   }
 
   public static double recaudacionTotal(double dinero_reserva){
-    return dinero_reserva+=dinero_reserva;
+    return dinero_reserva;
   }
 
   public static void main(String[] args){
