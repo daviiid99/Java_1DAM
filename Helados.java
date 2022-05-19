@@ -61,30 +61,77 @@ class Main{
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String sabor;
-        double kilos;
-        Helados miHelado;
+        String sabor = "";
+        double kilos = 0;
+        String kilos_temp = "0";
+        Helados miHelado = Helados.FRESA;
+        boolean pedirHelado = false;
+        boolean pedirSabor = false;
+        boolean pedirCantidad = false;
+        String preguntar = "";
+        boolean seguirPidiendo = false;
 
-        System.out.println("\nQue sabor de helado de nuestro surtido desea : \n");
+        do {
 
-        // Creamos un array con los sabores
-        Helados sabores[] = Helados.values();
+            // Creamos un array con los sabores
+            Helados sabores[] = Helados.values();
+            pedirSabor = false;
+            pedirCantidad = false;
+            seguirPidiendo = false;
 
-        // Imprimimos los sabores
-        for (Helados helado : sabores) System.out.println(helado);
 
-        // Preguntamos el sabor
-        sabor = scan.nextLine();
+            while (!pedirSabor){
+                 try{
+                    System.out.println("\nQue sabor de helado de nuestro surtido desea : \n");
+                    // Preguntamos el sabor
+                    sabor = scan.nextLine();
+                    // Asignamos el sabor
+                    miHelado = Helados.valueOf(sabor);
+                    pedirSabor = true;
 
-        // Asignamos el sabor
-        miHelado = Helados.valueOf(sabor.toUpperCase());
+                } catch (IllegalArgumentException exSabor){
+                    System.out.println("Los sabores disponibles son solo : \n");
+                    for (Helados helado : sabores) System.out.println(helado);
+                }
+             }
+            
 
-        // Preguntamos los kilos de helado deseado
-        System.out.println("\nCuantos kg de helado de sabor " + sabor + " desea :  \n");
-        kilos = scan.nextDouble();
 
-        // Imprimir por pantalla el resumen de la compra
-        System.out.println(ResumenCompra(sabor.toUpperCase(), miHelado.getMarca(), kilos, miHelado.getPrecio(), miHelado.precio_helado_por_kilos(kilos), miHelado.PopularidadMarca()));
+            while (!pedirCantidad){
+                try{
+                    // Preguntamos los kilos de helado deseado
+                    System.out.println("\nCuantos kg de helado de sabor " + sabor + " desea :  \n");
+                    kilos_temp = scan.nextLine();
+                    kilos = Double.valueOf(kilos_temp);
+                    pedirCantidad = true;
 
-    }
+                } catch (NumberFormatException exKilo) {
+                    System.out.println("Los kg de helado deben ser numericos\nEjemplos: 3.4, 3. 3.67,...\n");
+
+                }
+        
+            }
+
+            while (!seguirPidiendo){
+               
+                System.out.println("\nSeguir pidiendo helado? (SI|NO) ");
+                preguntar  = scan.nextLine();
+
+                if (preguntar.equals("SI")){
+                    seguirPidiendo = true;
+                    pedirHelado = false;
+                }
+
+                else if (preguntar.equals("NO")){
+                    seguirPidiendo = true;
+                    pedirHelado = true;
+                }       
+             }
+
+            // Imprimir por pantalla el resumen de la compra
+            System.out.println(ResumenCompra(sabor.toUpperCase(), miHelado.getMarca(), kilos, miHelado.getPrecio(), miHelado.precio_helado_por_kilos(kilos), miHelado.PopularidadMarca()));
+               
+        } while (!pedirHelado);
+}
+
 }
