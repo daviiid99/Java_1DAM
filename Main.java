@@ -41,69 +41,77 @@ public class Main{
     ArrayList<Albergue> ocupadas = new ArrayList<>();
 
     //Mientras sea valida la habitacion y además queda alguna habitacion libre preguntamos
-    while (ocupadas.size() < 4 && tiempo < 24){
-      if (ocupadas.size() > 0) ocupadas.clear();
 
-      // Creamos un array con todas las habitaciones que haY
-      Albergue arrAlbergue[] = Albergue.values();
+    try {
 
-      System.out.println("-- Solicitar tipo de habitacion, numero de personas y numero de noches --");
-      System.out.print("Indica el tipo de habitacion que desea: ");
-      tipoHabit = sc.nextLine();
-      habitacion = Albergue.valueOf(tipoHabit);
+      while (ocupadas.size() < 4 && tiempo < 24){
+        if (ocupadas.size() > 0) ocupadas.clear();
 
-      // Vamos a reducir las habitaciones disponibles del tipo seleccionado
-      habitacion.setHabitaciones();
+        // Creamos un array con todas las habitaciones que haY
+        Albergue arrAlbergue[] = Albergue.values();
 
-       // Cada vez que un tipo de habitacion tenga 0 plazas, se añade a la lista
-      for (Albergue h : arrAlbergue){
-        if (h.getHabitaciones() == 0){
-          ocupadas.add(h);
-          System.out.println("Tipo Habitaciones Ocupadas: \n" + ocupadas);
+        System.out.println("-- Solicitar tipo de habitacion, numero de personas y numero de noches --");
+        System.out.print("Indica el tipo de habitacion que desea: ");
+        tipoHabit = sc.nextLine();
+        habitacion = Albergue.valueOf(tipoHabit);
+
+        // Vamos a reducir las habitaciones disponibles del tipo seleccionado
+        habitacion.setHabitaciones();
+
+         // Cada vez que un tipo de habitacion tenga 0 plazas, se añade a la lista
+        for (Albergue h : arrAlbergue){
+          if (h.getHabitaciones() == 0){
+            ocupadas.add(h);
+            System.out.println("Tipo Habitaciones Ocupadas: \n" + ocupadas);
+          }
         }
-      }
-      
+        
 
-      System.out.print("Indica el numero de personas que sois: ");
-      numPersonas = Integer.parseInt(sc.nextLine());
-      while (habitacion.getPersonas() < numPersonas) {
-        System.out.println("\nError : Introduce un numero valido de personas\nPara la habitacion seleccionada " + habitacion + " el limite es " + habitacion.getPersonas());
+        System.out.print("Indica el numero de personas que sois: ");
         numPersonas = Integer.parseInt(sc.nextLine());
+        while (habitacion.getPersonas() < numPersonas) {
+          System.out.println("\nError : Introduce un numero valido de personas\nPara la habitacion seleccionada " + habitacion + " el limite es " + habitacion.getPersonas());
+          numPersonas = Integer.parseInt(sc.nextLine());
+        }
+        
+
+        System.out.print("Indica el numero de noches que os vais a quedar: ");
+        //numNoches = sc.nextInt(); sc.nextLine();
+        numNoches = Integer.parseInt(sc.nextLine());
+        System.out.println("-- Calcular precio total -- ");
+        precioTotal = habitacion.precioTotal(numNoches);
+        System.out.println("El precio total es de: " + precioTotal);
+        System.out.println("-- Calcular precio por persona -- ");
+        precioPorPersona = habitacion.precioPorPersona(precioTotal,numPersonas);
+        System.out.println("El precio por persona es de: " + precioPorPersona);
+        System.out.println("-- Proponer habitacion alternativa con descuento --");
+
+        // Vamos a generar un registro de la recaudacion por habitacion hasta ocuparlas todas
+        recaudacionTotal += recaudacionTotal(precioTotal);
+        System.out.println("\nRecaudacion del Albergue : \n" + recaudacionTotal);
+
+        // Vamos a aumentar 1h por cada reserva hasta alcanzar las 24h
+        tiempo = adelantarTiempo(tiempo);
+        System.out.println("Hora: \n Son las " + tiempo + "h");
+
+        // Imprimir en caso de quedarse sin habitaciones
+        if (ocupadas.size() == 4){
+          System.out.println("\nLo sentimos, nos hemos quedado sin habitaciones!\nQue tenga un buen día!");
+        }
+
+        // Imprimir en caso de ser la hora de cerrar
+        if ( tiempo == 24.0){
+          System.out.println("\nLo sentimos, es la hora de cerrar!");
+        }
+
+
       }
-      
 
-      System.out.print("Indica el numero de noches que os vais a quedar: ");
-      //numNoches = sc.nextInt(); sc.nextLine();
-      numNoches = Integer.parseInt(sc.nextLine());
-      System.out.println("-- Calcular precio total -- ");
-      precioTotal = habitacion.precioTotal(numNoches);
-      System.out.println("El precio total es de: " + precioTotal);
-      System.out.println("-- Calcular precio por persona -- ");
-      precioPorPersona = habitacion.precioPorPersona(precioTotal,numPersonas);
-      System.out.println("El precio por persona es de: " + precioPorPersona);
-      System.out.println("-- Proponer habitacion alternativa con descuento --");
-
-      // Vamos a generar un registro de la recaudacion por habitacion hasta ocuparlas todas
-      recaudacionTotal += recaudacionTotal(precioTotal);
-      System.out.println("\nRecaudacion del Albergue : \n" + recaudacionTotal);
-
-      // Vamos a aumentar 1h por cada reserva hasta alcanzar las 24h
-      tiempo = adelantarTiempo(tiempo);
-      System.out.println("Hora: \n Son las " + tiempo + "h");
-
-      // Imprimir en caso de quedarse sin habitaciones
-      if (ocupadas.size() == 4){
-        System.out.println("\nLo sentimos, nos hemos quedado sin habitaciones!\nQue tenga un buen día!");
+    } catch (Exception e){
+        System.out.println("\nAlgo ha salido mal...\n");
+    } finally {
+        System.out.println("Estoy en el finally");
       }
-
-      // Imprimir en caso de ser la hora de cerrar
-      if ( tiempo == 24.0){
-        System.out.println("\nLo sentimos, es la hora de cerrar!");
-      }
-
-
-    }
-
   
     //if (habitacion.getHabitaciones() == 0){
       //System.out.println("Hemos cometido un error y no quedan libres habitaciones como las reservada, tenemos estas opciones con descuento: ");
